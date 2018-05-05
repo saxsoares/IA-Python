@@ -4,29 +4,10 @@ import sys
 
 def perceptron (semente, alfa, max_epocas, entradas, saidas):
 
-    random.seed(semente)
+    # settar semente rand
+    # definir funcao ativacao
+    # adicionar o elemento neutro para o bias
     
-    ativacao = lambda u: 1 if u >= 0 else 0
-
-    entradas = map(lambda e: [1] + e, entradas )    # Exemplo usando a funcao map para aplicar a funcao anonima lambda a cada entrada
-
-    nDados = len(entradas)
-    nDim = len(entradas[0])
-
-    # Inicializar pesos arbitrariamente
-    pesos = [random.random() for _ in range(nDim)]
-
-    for epoca in range(max_epocas):
-        soma_erros = 0
-
-        for j in range(nDados):
-            entrada_peso = list(zip(entradas[j], pesos))
-            saida_calculada = ativacao(sum([e*p for e,p in entrada_peso]))
-
-            erro = saidas[j] - saida_calculada
-            soma_erros += abs(erro)
-
-            pesos = [p + alfa * erro * e for e,p in entrada_peso]
 
     # IMPRIME AS INFORMACOES DESEJADAS
     #print("Lista de Entrada;Saida;Potencial;Saida Calculada")
